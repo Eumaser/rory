@@ -1,0 +1,98 @@
+---------- Date: 2018-08-03 10:05:46 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=checkout/success
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-08-03 10:17:27 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=product/search
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-08-03 10:17:33 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=product/search
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-08-03 10:18:32 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=common/home
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-08-03 10:18:41 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=common/home
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-08-03 10:37:21 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=common/home
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-08-03 10:37:28 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=common/home
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+

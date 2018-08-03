@@ -1,0 +1,550 @@
+/*HTML ELEMENTS*/
+
+/*
+  Table of content
+  1a. 1Html elements
+  2a. Footer.tpl
+  3a. Header.tpl
+  4a. Contact.tpl
+  5a. About.tpl
+  6a. News.tpl
+  7a. Register.tpl
+  8a. Ncategory.tpl
+  9a. Ncategory(blog category module)
+  10a. News (blog archived post module, the latest post et etc)
+  11a. Article.tpl (The full detail of article)
+  12a. Checkout
+  13a. Order history - from order/order_list.tpl
+  14a. Account - the account users for changing their profile etc
+  15a. Product/category id = the product and category page http://localhost/rory/index.php?route=product/category&path=XXX
+  16a. Product/product-id = Inner detail of the product
+  17a. Cart.php = the cart page. theme/default/template/common/cart.php
+  18a. Home.php page
+*/
+
+/*----------------------------*/
+
+/*
+1a. Html elements
+*/
+body, html {
+    height: 100%;
+}
+
+footer{
+   background:  url('../image/footer-curly-bg.png') center top  ;
+/*   background-size:cover;*/
+   background-repeat: repeat-x;
+   position: relative;
+
+   z-index:100;
+   border-top: 0px;
+}
+/*----------------------------*/
+
+
+/*
+2a. Footer.tpl
+*/
+
+/*div that covers the footer, beneath the html tag footer*/
+.banner-footer{
+  background-color: #F7F6FC
+}
+
+/*edit the text color*/
+.color-titles,
+.color-article-title,
+.color-footer-strong{
+  color: #515A89;
+  font-weight: bold;
+}
+
+.color-articles,
+.color-footer-mild{
+  color:#A6B1D5;
+}
+
+.firstcom > a,
+.list-unstyled > li > a{
+  color:#A6B1D5;
+}
+
+/*----------------------------*/
+
+/*
+  3a. Header.tpl
+*/
+
+/*the first navigation bar where you can see the fb and instagram icons*/
+#top{
+  background-color: #94A1D0;
+/* background-image:url('../image/klarna_green_full.png');*/
+}
+
+/*the 2nd navigation menu where you see that dumb image*/
+.edrnav{
+/*  background-color: blue;*/
+  background-image:url('../image/bg.png');
+  background-position: bottom;
+  position: relative;
+  z-index: 40;
+}
+/*----------------------------*/
+
+/*
+  4a.Contact.tpl
+*/
+
+/*the image with the header of that dumb clothing and with the div catopn*/
+.banner-header{
+  height: 33%;
+  background: url('../image/banner.jpg');
+  margin-bottom: -10px;
+  margin-top: -15px;
+  position: relative;
+  z-index:0;
+}
+
+
+/*the text inside banner header*/
+.banner-caption{
+    position: absolute;
+	  left:0;
+	  top: 35%;
+	  width:100%;
+	  text-align:center;
+}
+
+/*div that covers the contact us and that google image*/
+.banner-wrapper{
+   background: url('../image/bg.png');
+   position: relative;
+   z-index: 20;
+   margin-bottom: -15px;
+}
+
+
+/*the contact us form page of inputs*/
+.banner-contact{
+  /*background: url('../image/contact-curly-bg1.png');*/
+    background: url('../image/bg-about.png');
+    background-size:cover;
+    position:relative;
+    z-index: 40;
+    margin-bottom: -60px;
+}
+
+
+/*the pink submit button at the banner contact page and other submit buttons*/
+.pink-button{
+  background-image: linear-gradient(to bottom, #FF91B8, #FF91B8);
+  border-color: #FF91B8;
+  padding: 10px 60px;
+  border-radius: 30px;
+}
+
+.pink-button-hollow{
+  background-image: linear-gradient(to bottom, #FFF, #FFF);
+  padding: 10px 60px;
+  border-radius: 30px;
+  border: 1px solid #FF91B8;
+  color:#FF91B8;
+}
+/*----------------------------*/
+
+
+
+/*
+  5a. About page - Can be access via admin panel.
+  Category->information->about us-> switch to source. Uses information.tpl
+*/
+
+/*background image of the about page...those 3 dumb pinky girly icons*/
+.banner-about{
+   background: url('../image/about-welcome-1st.png') ;
+   position: relative;
+   z-index: 20;
+   margin-bottom: -15px;
+}
+
+/*background image of the philosophy part...right go to mcdo and order some philosophy*/
+.banner-philosophy{
+  background: url('../image/about-bg-2nd.png') ;
+  position: relative;
+  z-index: 30;
+  margin-bottom: -15px;
+}
+
+/*background image of the specs where rory claims their product best...how suspicious*/
+.banner-specs{
+  background: url('../image/about-3rd.png') center top;
+  background-repeat: repeat-x;
+  position: relative;
+  z-index: 40;
+  margin-bottom: -15px;
+}
+
+/*background color based on the background of class banner specs...tricky little wangs*/
+.banner-specs-white{
+  background-color: #fff;
+}
+/*----------------------------*/
+
+
+/*
+  6a. News.tpl - The article area or news controllers...specifically the layout.tpl
+*/
+
+.banner-news{
+  background: url('../image/about-welcome-1st.png') right top;
+  position: relative;
+  z-index: 20;
+  margin-bottom: -15px;
+}
+
+
+.banner-news-cover{
+  background-color:#fff;
+}
+
+/*
+  7a. Register.tpl - register area/page
+*/
+
+/*bacgkround image of the register form page*/
+.banner-register{
+  background: url('../image/about-welcome-1st.png') right top;
+  position: relative;
+  z-index: 20;
+}
+
+/*css for the ruler above the newsletter...not enough meganes*/
+.register-ruler{
+  border: 1px solid #A8ACB5;
+}
+
+/*text color for newsletter and terms and condition...private dicks*/
+.newsletter,
+.agree{
+  color:#A8ACB5;
+}
+
+/*text color and design for the terms and use hyperlink. brave sir robin run away*/
+.agree > a{
+  font-weight: bold;
+  text-decoration: underline;
+  color:#60616B; /*60616B A8ACB5*/
+}
+
+/*the checkbox found in the terms and condition and newsletter. wish I had a donut*/
+
+
+/*.checkbox-hide input{
+
+    position: absolute;
+    opacity: 0;
+   cursor: pointer;
+
+}
+.news-checkmark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color:white;
+  border:1px solid green;
+  border-radius: 9px;
+}*/
+/*----------------------------*/
+
+
+
+/*
+  8a. nCategory.tpl. The article/blog lis of all blogs etc etc
+*/
+
+/*at the blog-news.css. override css to remove the border bottom and top*/
+.bnews-list .artblock  .ncategory-meta{
+  border-top: 0px;
+  border-bottom: 0px;
+  margin-bottom:30px;
+}
+
+/*div of the thumbnail image, meant for margin bottm...bottoms haha*/
+.ncategory-thumb{
+  margin-bottom: 30px;
+}
+
+
+/*at the blog-new.css override css to remove the display:block*/
+.bnews-list .artblock a.ncategory-thumbnail{
+  display:initial;
+}
+
+/*at the blog css, override the css to align the article link to the left side*/
+.bnews-list .artblock  .ncategory-button{
+  text-align: left
+}
+
+/*----------------------------*/
+
+
+/*
+  9a. nCategory.tpl (blog category module). The module that list all article category
+*/
+
+/*override .list-group in styleheet.css*/
+.list-group a{
+  padding: 3px 0px;
+  border: 0px;
+}
+
+/*----------------------------*/
+
+
+
+/*
+  10a. news.tpl - The module for the blog archived post etc modifications latest post etc etc
+*/
+
+/*add float left and a margin*/
+.article-image-edr{
+  float:left;
+  margin-right: 20px;
+}
+
+/*the article name in bold stye*/
+.article-edr a{
+  font-weight: bold;
+}
+/*----------------------------*/
+
+
+/*
+  11a. Article.tpl - The full detail of an article/blog
+*/
+
+/*remove the border top and  down*/
+.article-content .article-meta{
+  border-bottom: 0px;
+  border-top: 0px;
+}
+
+/*
+ovverride stylesheet.css, remove the italized format
+*/
+.article-content .article-meta span, .article-content .article-meta a{
+  font-style: initial;
+}
+
+
+/*----------------------------*/
+
+
+/*
+  12a. Checkout.tpl
+*/
+.checkout-table>tbody>tr>td{
+  border-top: 0px;
+  vertical-align: middle;
+}
+
+.checkout-table>thead>tr>td{
+  text-align: center;
+  background-color: #94A1D0;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.checkout-plus,
+.checkout-minus{
+  color:white;
+  font-size: 10px;
+}
+
+.btn-black{
+
+    background-color:black;
+    border: none;
+    color: white;
+    padding: 3px;
+    font-size: 5px;
+    cursor: pointer;
+
+}
+/*----------------------------*/
+
+
+/*
+  13a. OrderList.tpl
+*/
+
+
+.order-table-head{
+  font-weight: bold;
+}
+
+.order-table-td{
+  border-bottom: 1px solid #EBEBEB;
+  border-top: 1px solid #EBEBEB;
+}
+
+.order-table-start{
+  border-left:1px solid #EBEBEB;
+}
+
+
+.order-table-end{ q
+  border-right:1px solid #EBEBEB;
+}
+/*----------------------------*/
+
+
+/*
+  14a. Account.tpl.
+*/
+
+
+.post-wrapper{
+  border:1px solid #EBEBEB;
+  border-radius:5px;
+  padding:20px;
+  margin: 15px;
+}
+
+.post-image{
+  float: left;
+  margin-right: 20px;
+}
+
+.post-image img{
+  display: block;
+}
+
+.post-content{
+  margin-top:-5px;
+}
+
+.post-link{
+  font-size: 14px;
+}
+
+/********************/
+
+/*
+  15a. Product/category id = the product and category page http://localhost/rory/index.php?route=product/category&path=XXX
+*/
+.image-thumb{
+  border:5px solid #F4F4F4;
+  border-radius: 15px;
+}
+
+.image{
+  margin-top: 10px;
+}
+
+.defaults{
+  font-size: 16px;
+ color:#BCBCBC
+}
+
+.price-new{
+  font-weight: bold;
+  font-size: 16px;
+  color:#FD8AB4;
+}
+
+.product-list .product-thumb .caption{
+  margin-left: 0px;
+}
+
+.caption-product-name{
+
+  font-size:14px;
+}
+
+/**************/
+
+
+/*
+  16a. Product/product-id = Inner detail of the product
+*/
+.thumbnails{
+  margin-top: 10px;
+}
+
+.group-size{
+  margin-left: 25px;
+}
+
+/*For the inner product slick that is vertical*/
+.slick-prev,
+.slick-next{
+  padding: 0px 24px;
+}
+
+/*For the inner product slick that is vertical*/
+.slick-prev{
+  margin-bottom: 10px;
+}
+
+/*slick related products*/
+.slick-products{
+  margin: 0px 10px;
+  background-color: #999;
+  min-height: 350px;
+  width:0px;
+  /*border-radius:8px;
+  border: 8px solid #94A0CF;*/
+}
+
+.slick-related-left{
+  left:-60px;
+}
+
+.slick-related-right{
+  right:-60px;
+}
+
+.slick-related-left,
+.slick-related-right{
+
+  position:absolute;
+  top:50%;
+}
+
+/**************/
+
+
+
+/*
+  17a. Cart.php = the cart page. theme/default/template/common/cart.php
+
+*/
+#cart-total{
+	 position: absolute;
+    bottom: 8px;
+    left: 15px;
+    background-color: #FF91B8;
+    padding: 1px;
+    color:white;
+    border-radius: 50%;
+    width: 15px;
+    text-align: center;
+	}
+
+  .cart-main{
+		margin-top:10px
+	}
+
+
+/**************************/
+
+
+/*
+  18a. Home.php page
+*/

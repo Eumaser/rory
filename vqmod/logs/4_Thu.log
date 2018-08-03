@@ -1,0 +1,14 @@
+---------- Date: 2018-08-02 11:06:51 ~ IP : ::1 ----------
+REQUEST URI : /rory/index.php?route=product/product&product_id=59
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\rory\vqmod/xml/shopencart-news-blog.xml
+   id        : 
+   version   : 1.1
+   vqmver    : 
+   author    : Flo from shopencart.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php if ($description) { ?>
+----------------------------------------------------------------------
+
+

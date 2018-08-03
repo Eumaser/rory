@@ -1,0 +1,1 @@
+2018-07-24 17:44:40	::1	mailchimp_integration installed
