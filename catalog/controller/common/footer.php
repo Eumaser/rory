@@ -114,8 +114,10 @@ class ControllerCommonFooter extends Controller {
 
 		$data['content_footer'] = $this->load->controller('common/content_footer');
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.tpl')) {
-			return $this->load->view($this->config->get('config_template') . '/template/common/footer.tpl', $data);
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.php')) {
+			return $this->load->view($this->config->get('config_template') . '/template/common/footer.php', $data);
+
+		//	return $this->load->view($this->config->get('config_template') . '/template/common/footer.tpl', $data);
 		} else {
 			return $this->load->view('default/template/common/footer.tpl', $data);
 		//	return $this->load->view('default/template/common/footer.tpl', $data);
