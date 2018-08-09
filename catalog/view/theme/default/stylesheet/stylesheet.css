@@ -165,8 +165,11 @@ div.required .control-label:before {
 	color: #444;
 }
 #cart .dropdown-menu {
-	background: #eee;
+	/*background: #eee;*/
+		background: #fff;
 	z-index: 1001;
+	/*edr*/
+	width:400px;
 }
 #cart .dropdown-menu {
 	min-width: 100%;
