@@ -139,64 +139,13 @@
 
   </div>
 </div>
-<br><br>
-<input type="text" name="" value="">
-<div class="btn-group-vertical">
 
- <button type="button" class="btn">Apple</button>
- <button type="button" class="btn">Samsung</button>
 
 </div>
 
 
 <br><br>
 
-<div class="container">
-
-
-<div class="row">
-  <div class="col-md-4">
-    <img src="image/catalog/rory/Icons/boys-clothing.jpg" alt="asdasd">
-
-  </div>
-  <div class="col-md-4">
-    <img src="image/catalog/rory/Icons/arrivals.jpg" alt="asdasd">
-  </div>
-  <div class="col-md-4">
-    <img src="image/catalog/rory/Icons/girls-cloth.jpg" alt="asdasd">
-  </div>
-  <div class="col-md-4">
-      <img src="image/catalog/rory/Icons/baby-cloth.jpg" alt="asdasd">
-  </div>
-  <div class="col-md-4">
-      <img src="image/catalog/rory/Icons/promotion.jpg" alt="asdasd">
-  </div>
-</div>
-
-
-
-</div>
-
-<table class="table">
-  <tr>
-    <td>  <img src="image/catalog/rory/Icons/boys-clothing.jpg" alt="asdasd"></td>
-    <td>
-      <img src="image/catalog/rory/Icons/arrivals.jpg" alt="asdasd"> &nbsp;&nbsp;
-      <img src="image/catalog/rory/Icons/girls-cloth.jpg" alt="asdasd"><br><br>
-      <br>
-      <img src="image/catalog/rory/Icons/baby-cloth.jpg" alt="asdasd">&nbsp;&nbsp;
-        <img src="image/catalog/rory/Icons/promotion.jpg" alt="asdasd">
-    </td>
-    <td>
-
-
-    </td>
-  </tr>
-  <tr>
-
-
-  </tr>
-</table>
 
 <script type="text/javascript"><!--
 $('#button-search').bind('click', function() {
@@ -244,4 +193,5 @@ $('select[name=\'category_id\']').on('change', function() {
 });
 
 $('select[name=\'category_id\']').trigger('change');
---></script
+--></script>
+<?php echo $footer; ?>
