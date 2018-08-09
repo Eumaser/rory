@@ -20,6 +20,7 @@
   16a. Product/product-id = Inner detail of the product
   17a. Cart.php = the cart page. theme/default/template/common/cart.php
   18a. Home.php page
+  19a. Cart.php - common/cart.php or tpl
 */
 
 /*----------------------------*/
@@ -151,6 +152,15 @@ footer{
   border: 1px solid #FF91B8;
   color:#FF91B8;
 }
+
+.lavender-button{
+  background-image: linear-gradient(to bottom, #95A1D1, #95A1D1);
+  border-color: #95A1D1;
+  padding: 10px 60px;
+  border-radius: 30px;
+}
+
+
 /*----------------------------*/
 
 
@@ -548,3 +558,318 @@ ovverride stylesheet.css, remove the italized format
 /*
   18a. Home.php page
 */
+
+
+.boys{
+  background-image:url('../image/boys-clothing.jpg');
+  background-repeat: no-repeat;
+/*  width: 270px;*/
+  /*height: 460px;*/
+  height: 470px;
+  position: relative;
+}
+
+.arrivals{
+  background-image:url('../image/arrivals.jpg');
+  background-repeat: no-repeat;
+  /*width: 270px;*/
+  height: 230px;
+  position: relative;
+}
+
+.girls{
+  background-image:url('../image/girls-cloth.jpg');
+  background-repeat: no-repeat;
+/*  width: 565px;*/
+  height: 230px;
+  position: relative;
+}
+
+.promotion{
+  background-image:url('../image/promotion.jpg');
+  background-repeat: no-repeat;
+/*  width: 270px;*/
+  height: 230px;
+  position: relative;
+}
+
+.babies{
+  background-image:url('../image/baby-cloth.jpg');
+  background-repeat: no-repeat;
+  /*width: 565px;*/
+  height: 230px;
+  position: relative;
+}
+
+.boys-content{
+  margin: 10px;
+  position: absolute;
+  bottom: 30px;
+}
+
+.boys-title{
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #111;
+}
+
+.arrival-content{
+  margin: 10px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.girls-content{
+  position: absolute;
+  margin: 10px;
+  right: 100px;
+  bottom: 70px;
+}
+
+.girls-titles{
+  color:#FE91B6;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #111;
+}
+
+.babies-content{
+  position: absolute;
+  margin: 10px;
+  right: 50px;
+  bottom: 50px;
+}
+
+
+.promotion-link{
+  margin: 10px;
+}
+
+.promotion-title{
+  padding: 10px;
+
+}
+
+.promotion-link{
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+}
+
+.category-links{
+  color:#404A7C;
+  font-weight: bold;
+}
+
+.category-links-odd{
+  color:white;
+  font-weight:bold;
+}
+
+.banner-dumb-products{
+  background-image:url('../image/feat-prod-bg.png');
+  background-position: bottom center;
+  height: 680px;
+  position: relative;
+  z-index:10;
+  margin-top: -10px;
+}
+
+.banner-intro{
+    background-image:url('../image/about-welcome-1st.png') ;
+    background-position: bottom center;
+    position: relative;
+    z-index: 20;
+  /*  margin-bottom: -15px;*/
+}
+
+/*newsletter part*/
+#overlay,
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  /*display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+/*  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgba(255,255,255,0.8); /* Black background with opacity */
+
+  z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+/*  cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlay-content{
+ background:  url('../image/newsletter.jpg');
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ box-shadow: 1px 1px 20px grey;
+ /*font-size: 50px;*/
+/* color: white;*/
+ transform: translate(-50%,-50%);
+ -ms-transform: translate(-50%,-50%);
+ border: 8px solid #545C8B;
+ padding: 10px;
+ height:400px;
+ width: 500px;
+ cursor: pointer;
+}
+
+.inner-form{
+  padding: 20px 40px; ;
+}
+
+.newsletter-button{
+  background-color: #ff91b8;
+  border: 1px solid #ff91b8;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 200px;
+  color:white;
+}
+
+.products-tabs{
+  display: flex;
+  justify-content: center;
+}
+
+.alt-image{
+  /*margin:0px 30px;*/
+  margin:0px 10px;
+  width: 1100px;
+  height:350px;
+  /*border: 1px solid red;*/
+  background-color: white;
+  position: relative;
+  border-radius:10px;
+}
+
+.alt-image:hover{
+  border: 8px solid #93A1D0;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+}
+
+.alt-image:hover .homepage-buttons{
+  display: block
+}
+
+
+.homepage-name{
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.homepage-special{
+  color: pink;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.homepage-default{
+  text-decoration: line-through;
+  color: #999;
+}
+
+.homepage-default-price{
+  color:#999;
+  font-size: 16px;
+}
+
+.homepage-buttons{
+  display: none;
+  position: absolute;
+  top:40%;
+  left:25%;
+}
+
+.round-button{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  border-radius: 50%;
+  color:#f5f5f5;
+  text-align:center;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:bold;
+  margin: 5px;
+}
+
+.round-button:hover{
+  color:#fff;
+}
+
+.btn-glass{
+  background-color: #545C8A;
+}
+
+.btn-bag{
+  background-color: #FF91B8;
+}
+
+.homepage-arrow-left{
+  left: -80px;
+}
+.homepage-arrow-right{
+  right: -80px;
+}
+
+.homepage-arrow-left,
+.homepage-arrow-right{
+  position:absolute;
+  top:50%;
+  z-index: 20;
+  background-color: #95A1D1;
+  border:1px solid #95A1D1;
+  border-radius:15px;
+  color:white;
+}
+
+
+.containers{
+  width:1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*overrided boostrap nav pills*/
+.nav-pills>li.active>a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus{
+  color:pink;
+  background-color: #fff;
+  border: 1px solid pink;
+  padding: 5px 20px;
+  border-radius: 20px;
+
+}
+
+.nav-pills > li > a {
+  color: #666;
+}
+
+
+
+/********************404A7C******/
+
+
+
+/*
+  19a. Cart.php - common/cart.php or tpl
+*/
+.li-box{
+  margin: 15px;
+}
+
+.li-hr{
+  border:1px solid #bbb
+}
+
+
+/**************************/
