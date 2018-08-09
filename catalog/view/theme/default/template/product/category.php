@@ -12,7 +12,6 @@
 </div>
 
 
-
 <div class="banner-news">
 
   <div class="container">
