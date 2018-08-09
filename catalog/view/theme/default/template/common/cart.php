@@ -1,3 +1,14 @@
+<?php
+  $ntotal = [];
+?>
+
+<style>
+  .flex-container{
+    display: flex;
+  }
+
+</style>
+
 
 
 <div id="cart" class="cart-main btn-group btn-block">
@@ -5,34 +16,42 @@
     <img src="image/catalog/rory/Icons/cart.png"  alt="asdasd">
   </a>
   <span id="cart-total">
-      <?php //echo $text_items; ?>
-        <?php echo $cart_items; ?>
+      <?php //echo $text_items; 95A1D1 ?>
+      <?php echo $cart_items; ?>
   </span>
 
 
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
-    <li>
-      <table class="table table-striped">
+    <li class="li-box">
+      &nbsp;  <strong><?php echo $cart_items; ?> items added to cart</strong>
+    </li>
+    <li class="li-box">
+      <hr class="li-hr">
+    </li>
+    <li class="li-box">
+
+      <table class="tables" style="width:100%">
         <?php foreach ($products as $product) { ?>
         <tr>
-          <td class="text-center"><?php if ($product['thumb']) { ?>
+          <td style="width:30%">
             <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
-            <?php } ?></td>
-          <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+          </td>
+          <td >
+            <?php echo $product['name']; ?>
             <?php if ($product['option']) { ?>
             <?php foreach ($product['option'] as $option) { ?>
             <br />
             - <small><?php echo $option['name']; ?> <?php echo $option['value']; ?></small>
             <?php } ?>
             <?php } ?>
-            <?php if ($product['recurring']) { ?>
-            <br />
-            - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
-            <?php } ?></td>
-          <td class="text-right">x <?php echo $product['quantity']; ?></td>
-          <td class="text-right"><?php echo $product['total']; ?></td>
-          <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['key']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
+            <br><br>
+            Quantity: <?php echo $product['quantity']; ?>
+            <br>
+            Price: <?php echo $product['total']; ?>
+            <?php $ntotal[] = $product['total']?>
+
+          </td>
         </tr>
         <?php } ?>
         <?php foreach ($vouchers as $voucher) { ?>
@@ -45,24 +64,42 @@
         </tr>
         <?php } ?>
       </table>
+
+
     </li>
-    <li>
-      <div>
-        <table class="table table-bordered">
-          <?php foreach ($totals as $total) { ?>
-          <tr>
-            <td class="text-right"><strong><?php echo $total['title']; ?></strong></td>
-            <td class="text-right"><?php echo $total['text']; ?></td>
-          </tr>
-          <?php } ?>
-        </table>
-        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
-      </div>
+    <li class="li-box">
+      <hr class="li-hr">
     </li>
+
+    <li class="li-box">
+      <p class="text-right">
+        Subtotal: <?php echo $totals[0]['text'] ?>
+      </p>
+
+    </li>
+    <li class="li-box">
+      <p class="text-center">
+        <a class="btn lavender-button" style="color:white" href="<?php echo $cart; ?>">
+           <?php echo $text_cart; ?>
+        </a>
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn pink-button" style="color:white" href="<?php echo $checkout; ?>">
+
+            <?php echo $text_checkout; ?>
+
+        </a>
+      </p>
+
+    </li>
+
     <?php } else { ?>
+
     <li>
       <p class="text-center"><?php echo $text_empty; ?></p>
     </li>
+
+
+
     <?php } ?>
   </ul>
 
