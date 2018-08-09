@@ -73,6 +73,8 @@ class ControllerProductCategory extends Controller {
 
 			$category_id = (int)array_pop($parts);
 
+
+
 			foreach ($parts as $path_id) {
 				if (!$path) {
 					$path = (int)$path_id;
@@ -94,6 +96,10 @@ class ControllerProductCategory extends Controller {
 		}
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
+
+		//$hello = $this->model_custom_custom->hellow();
+		//print_r($hello);
+		//die();
 
 		if ($category_info || $category_id == 0) {
 
@@ -145,6 +151,7 @@ class ControllerProductCategory extends Controller {
 				$data['thumb'] = '';
 				$data['description'] = '';
 			}
+
 			$data['compare'] = $this->url->link('product/compare');
 
 			$url = '';
@@ -169,6 +176,9 @@ class ControllerProductCategory extends Controller {
 
 			$results = $this->model_catalog_category->getCategories($category_id);
 
+			//echo '<pre>';
+			//print_r($results);die();
+
 			foreach ($results as $result) {
 				$filter_data = array(
 					'filter_category_id'  => $result['category_id'],
@@ -188,6 +198,8 @@ class ControllerProductCategory extends Controller {
 				}
 
 			}
+
+
 
 			$data['products'] = array();
 
@@ -237,6 +249,7 @@ class ControllerProductCategory extends Controller {
 
 				if($category_id != 0) {
 					$data['products'][] = array(
+
 						'product_id'  => $result['product_id'],
 						'thumb'       => $image,
 						'name'        => $result['name'],
@@ -250,6 +263,7 @@ class ControllerProductCategory extends Controller {
 					);
 				} else {
 					$data['products'][] = array(
+
 						'product_id'  => $result['product_id'],
 						'thumb'       => $image,
 						'name'        => $result['name'],
@@ -471,6 +485,13 @@ class ControllerProductCategory extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+			//echo '<pre>';
+			//print_r($data);die();
+			if (isset($this->request->get['path'])) {
+				$url .= '&path=' . $this->request->get['path'];
+					$cid = $this->request->get['path'];
+			}
+
 
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/category.php')) {
@@ -480,7 +501,9 @@ class ControllerProductCategory extends Controller {
 			} else {
 				$this->response->setOutput($this->load->view('default/template/product/category.tpl', $data));
 			}
+
 		} else {
+
 			$url = '';
 
 			if (isset($this->request->get['path'])) {
