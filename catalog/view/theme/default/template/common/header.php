@@ -44,10 +44,9 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link href="catalog/view/theme/default/stylesheet/custom.css" rel="stylesheet">
-
+<script src="catalog/view/javascript/custom.js" type="text/javascript"></script>
 </head>
-<body class="<?php echo $class; ?>" style="background-color:#999">
-
+<body class="<?php echo $class; ?>" style="background-color:#fff">
 
 <nav id="top">
   <div class="container">
@@ -101,13 +100,18 @@
           </ul>
           <ul class="nav navbar-nav navbar-right" style="margin-top:1em">
             <li> <!--new product-->
-              <a href="<?php echo $news; ?>" <?php echo (isset($route) && $route=="product/category") ? 'class="active"' : '' ; ?>> <?php echo $text_news; ?></a>
+              <a href="<?php echo $new_arrival; ?>" <?php echo (isset($route) && $route=="product/category") ? 'class="active"' : '' ; ?>> <?php echo $text_news; ?></a>
             </li>
             <li class="dropdown"><!--product/ncategory show dropdown--->
               <a href="<?php echo $shop_all; ?>" ><?php echo $text_shop_all; ?></a>
               <ul class="dropdown-menu dropdown-menu-right">
 
                 <?php if ($categories): ?>
+                  <li >
+                    <a style="font-weight:bold" href="#">Categories</a>
+                  </li>
+
+
                   <?php foreach ($categories as $category): ?>
                     <li><a href="<?php echo $category['href']; ?>" class="active"><?php echo $category['name']; ?></a></li>
 
