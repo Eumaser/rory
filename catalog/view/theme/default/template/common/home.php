@@ -2,14 +2,6 @@
 
 <?php $x = 1 ?>
 
-<style>
-  .flex-container{
-    display: flex;
-    flex-direction: row;
-  }
-
-
-</style>
 
 
 <div class="container">
@@ -109,7 +101,7 @@
 
                 <div class="boys">
                     <div class="boys-content">
-                      <h1 class="boys-title">BOYS CLOTHING</h1>
+                      <h2 class="boys-title">BOYS CLOTHING</h2>
                       <a  class="category-links" href="<?php echo $categories[0]['href'] ?>">SHOP NOW >></a>
                     </div>
                 </div>
@@ -154,7 +146,7 @@
                   <div class="col-sm-4">
                     <div class="promotion">
                       <div class="promotion-title text-center">
-                        <h1 class="boys-title" style="line-height:1">PROMOTION</h1>
+                        <h2 class="boys-title" style="line-height:1">PROMOTION</h2>
 
                       </div>
                       <div class="promotion-link">
@@ -174,97 +166,99 @@
 
 
 <div class="banner-dumb-products">
-  <div class="containers">
+    <div class="container">
 
-    <div class="banner-slick-products text-center">
+      <div class="banner-slick-products text-center">
+        <br><br>
+        <h1 class="text-center">Featured Products</h1>
+        <br>
+
+      <ul class="nav nav-pills products-tabs">
+        <?php foreach ($categories as $v): ?>
+          <?php if ($v['name']=='Boys'): ?>
+            <!---
+            <li class="active"><a data-toggle="pill" href="#<?php echo $v['name'] ?>"><?php echo $v['name'] ?></a></li>
+            ---->
+            <li class="active"><a data-toggle="pill" href="#<?php echo $v['category_id'] ?>"><?php echo $v['name'] ?></a></li>
+
+          <?php else: ?>
+            <!----
+            <li class=""><a data-toggle="pill" href="#<?php echo $v['name'] ?>"><?php echo $v['name'] ?></a></li>
+            --->
+            <li class=""><a data-toggle="pill" href="#<?php echo $v['category_id'] ?>"><?php echo $v['name'] ?></a></li>
+
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </ul>
       <br><br>
-      <h1 class="text-center">Featured Products</h1>
-      <br>
-
-    <ul class="nav nav-pills products-tabs">
-      <?php foreach ($categories as $v): ?>
-        <?php if ($v['name']=='Boys'): ?>
-          <!---
-          <li class="active"><a data-toggle="pill" href="#<?php echo $v['name'] ?>"><?php echo $v['name'] ?></a></li>
-          ---->
-          <li class="active"><a data-toggle="pill" href="#<?php echo $v['category_id'] ?>"><?php echo $v['name'] ?></a></li>
-
-        <?php else: ?>
-          <!----
-          <li class=""><a data-toggle="pill" href="#<?php echo $v['name'] ?>"><?php echo $v['name'] ?></a></li>
-          --->
-          <li class=""><a data-toggle="pill" href="#<?php echo $v['category_id'] ?>"><?php echo $v['name'] ?></a></li>
-
-        <?php endif; ?>
-      <?php endforeach; ?>
-    </ul>
-    <br><br>
 
 
-    <div class="tab-content">
-      <?php foreach ($categories as $v): ?>
-        <?php if ($v['name'] =='Boys'): ?>
-          <div id="<?php echo $v['category_id'] ?>" class="tab-pane fade in active">
-        <?php else: ?>
-          <div id="<?php echo $v['category_id'] ?>" class="tab-pane fade">
-        <?php endif; ?>
+      <div class="tab-content" style="position:relative">
+        <?php foreach ($categories as $v): ?>
+          <?php if ($v['name'] =='Boys'): ?>
+            <div id="<?php echo $v['category_id'] ?>" class="tab-pane fade in active">
+          <?php else: ?>
+            <div id="<?php echo $v['category_id'] ?>" class="tab-pane fade">
+          <?php endif; ?>
 
 
-          <div class="feature-responsive">
-            <?php foreach ($altproduct as $key => $value): ?>
-                <?php if ($v['category_id'] == $value['category_id']): ?>
-                  <div class="alt-image">
+            <div class="feature-responsive">
+              <?php foreach ($altproduct as $key => $value): ?>
+                  <?php if ($v['category_id'] == $value['category_id']): ?>
+                    <div class="alt-image">
 
+                      <div class="test">
+                        <img src="<?php echo $value['thumb']; ?>" alt="<?php echo $value['name']; ?>" title="<?php echo $value['name']; ?>" class="img-responsive" />
 
-                    <img src="<?php echo $value['thumb']; ?>" alt="<?php echo $value['name']; ?>" title="<?php echo $value['name']; ?>" class="img-responsive" />
+                        <p class="homepage-name">
+                          <?php echo $value['name'] ?>
+                        </p>
+                        <p>
+                          <?php if ($value['special']): ?>
+                            <span class="homepage-special">
+                                <?php echo $curr.$value['special'] ?>
+                            </span>
+                            <span class="homepage-default">
+                                <?php echo $curr.$value['default_price'] ?>
+                            </span>
+                          <?php else: ?>
+                            <span class="homepage-default-price">
+                              <?php echo $curr.$value['default_price'] ?>
+                            </span>
+                          <?php endif; ?>
+                        </p>
 
-                    <p class="homepage-name">
-                      <?php echo $value['name'] ?>
-                    </p>
-                    <p>
-                      <?php if ($value['special']): ?>
-                        <span class="homepage-special">
-                            <?php echo $curr.$value['special'] ?>
-                        </span>
-                        <span class="homepage-default">
-                            <?php echo $curr.$value['default_price'] ?>
-                        </span>
-                      <?php else: ?>
-                        <span class="homepage-default-price">
-                          <?php echo $curr.$value['default_price'] ?>
-                        </span>
-                      <?php endif; ?>
-                    </p>
+                        <div class="homepage-buttons">
+                          <a href="<?php echo $value['view_href'] ?>" class="round-button btn-glass"><i class="fa fa-search fa-1" aria-hidden="true"></i></a>
+                          <a href="javascript:void(0)" class="round-button btn-bag"  onclick="cart.altadd('<?php echo $value['product_id'] ?>', '1');">
+                            <i class="fa fa-shopping-bag fa-1"></i>
+                          </a>
+                        </div>
+                      </div>
 
-                    <div class="homepage-buttons">
-                      <a href="<?php echo $value['view_href'] ?>" class="round-button btn-glass"><i class="fa fa-search fa-1" aria-hidden="true"></i></a>
-                      <a href="javascript:void(0)" class="round-button btn-bag"  onclick="cart.altadd('<?php echo $value['product_id'] ?>', '1');">
-                        <i class="fa fa-shopping-bag fa-1"></i>
-                      </a>
                     </div>
-                  </div>
 
 
-                <?php endif; ?>
+                  <?php endif; ?>
 
-            <?php endforeach; ?>
+              <?php endforeach; ?>
+            </div>
+
           </div>
 
+        <?php endforeach; ?>
+        <br><br>
+        <div class="">
+          <button type="button" name="button" class="newsletter-button" onclick="location.href='<?php echo $shop_all ?>'">VIEW ALL</button>
         </div>
-
-      <?php endforeach; ?>
-      <br><br>
-      <div class="">
-        <button type="button" name="button" class="newsletter-button" onclick="location.href='<?php echo $shop_all ?>'">VIEW ALL</button>
       </div>
-    </div>
 
 
 
+      </div>
     </div>
   </div>
 </div>
-
 
 <br>
 
@@ -288,11 +282,41 @@
 $( document ).ready(function() {
   $('.feature-responsive').slick({
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll:1,
+
     prevArrow:"<button type='button' class='homepage-arrow-left'><i class='fa fa-angle-left fa-3'> </i></button>",
     nextArrow:"<button type='button' class='homepage-arrow-right'><i class='fa fa-angle-right fa-3'> </i></button>",
-    responsive:[
+    responsive: [
+   {
+     breakpoint: 1024,
+     settings: {
+       slidesToShow: 3,
+       slidesToScroll: 3,
+
+     }
+   },
+   {
+     breakpoint: 600,
+     settings: {
+       slidesToShow: 2,
+       slidesToScroll: 2,
+       arrows : false,
+     }
+   },
+   {
+     breakpoint: 480,
+     settings: {
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       arrows : false,
+     }
+   }
+   // You can unslick at a given breakpoint now by adding:
+   // settings: "unslick"
+   // instead of a settings object
+ ]
+    /*responsive:[
         {
           breakpoint:600,
           settings:{
@@ -307,7 +331,7 @@ $( document ).ready(function() {
             slidesToScroll: 1
           }
         },
-    ],
+    ],*/
 
   });
 
@@ -316,11 +340,38 @@ $( document ).ready(function() {
     $('.feature-responsive').slick('unslick');
     $('.feature-responsive').slick({
       infinite: true,
-      slidesToShow: 6,
+      slidesToShow: 5,
       slidesToScroll:1,
       prevArrow:"<button type='button' class='homepage-arrow-left'><i class='fa fa-angle-left fa-3'> </i></button>",
       nextArrow:"<button type='button' class='homepage-arrow-right'><i class='fa fa-angle-right fa-3'> </i></button>",
-      responsive:[
+      responsive: [
+     {
+       breakpoint: 1024,
+       settings: {
+         slidesToShow: 3,
+         slidesToScroll: 3,
+
+       }
+     },
+     {
+       breakpoint: 600,
+       settings: {
+         slidesToShow: 2,
+         slidesToScroll: 2
+       }
+     },
+     {
+       breakpoint: 480,
+       settings: {
+         slidesToShow: 1,
+         slidesToScroll: 1
+       }
+     }
+     // You can unslick at a given breakpoint now by adding:
+     // settings: "unslick"
+     // instead of a settings object
+   ]
+    /*  responsive:[
           {
             breakpoint:600,
             settings:{
@@ -335,7 +386,7 @@ $( document ).ready(function() {
               slidesToScroll: 1
             }
           },
-      ],
+      ],*/
 
     });
 
