@@ -2,6 +2,7 @@
 
 /*
   Table of content
+  aa. media queries
   1a. 1Html elements
   2a. Footer.tpl
   3a. Header.tpl
@@ -23,6 +24,37 @@
   19a. Cart.php - common/cart.php or tpl
 */
 
+
+/**/
+
+
+
+@media (max-width:780px) {
+   .homepage-arrow-right,
+   .homepage-arrow-left{
+     display: none !important;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+    .flex-container{
+      flex-direction: column;
+    }
+    .promotion-title{
+      text-align: left;
+    }
+
+}
+
+@media (max-width: 480px) {
+  
+
+}
+
+/*******************************/
 /*----------------------------*/
 
 /*
@@ -668,7 +700,7 @@ ovverride stylesheet.css, remove the italized format
 .banner-dumb-products{
   background-image:url('../image/feat-prod-bg.png');
   background-position: bottom center;
-  height: 680px;
+  height: 700px;
   position: relative;
   z-index:10;
   margin-top: -10px;
@@ -738,8 +770,8 @@ ovverride stylesheet.css, remove the italized format
 .alt-image{
   /*margin:0px 30px;*/
   margin:0px 10px;
-  width: 1100px;
-  height:350px;
+
+  height:380px;
   /*border: 1px solid red;*/
   background-color: white;
   position: relative;
@@ -749,12 +781,20 @@ ovverride stylesheet.css, remove the italized format
 .alt-image:hover{
   border: 8px solid #93A1D0;
   border-radius: 5px;
-  cursor: pointer;
+
   display: block;
 }
 
+.alt-image > .test> img{
+  margin-left: auto;
+  margin-right:auto;
+}
+
+
+
 .alt-image:hover .homepage-buttons{
-  display: block
+  display: block;
+  cursor: pointer;
 }
 
 
@@ -782,9 +822,9 @@ ovverride stylesheet.css, remove the italized format
 
 .homepage-buttons{
   display: none;
-  position: absolute;
-  top:40%;
-  left:25%;
+  /*position: absolute;*/
+  /*top:40%;*/
+  /*left:25%;*/
 }
 
 .round-button{
@@ -814,10 +854,12 @@ ovverride stylesheet.css, remove the italized format
 }
 
 .homepage-arrow-left{
-  left: -80px;
+  /*left: -80px;*/
+  left: -40px;
 }
 .homepage-arrow-right{
-  right: -80px;
+/*  right: -80px;*/
+  right: -40px;
 }
 
 .homepage-arrow-left,
