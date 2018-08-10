@@ -228,10 +228,10 @@ class ControllerCommonHeader extends Controller {
 		//print_r($data);
 		//die();
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.php')) {
-			return $this->load->view($this->config->get('config_template') . '/template/common/header.php', $data);
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
+		//	return $this->load->view($this->config->get('config_template') . '/template/common/header.php', $data);
 
-		//	return $this->load->view($this->config->get('config_template') . '/template/common/header.tpl', $data);
+			return $this->load->view($this->config->get('config_template') . '/template/common/header.tpl', $data);
 		} else {
 			return $this->load->view('default/template/common/header.tpl', $data);
 		}
