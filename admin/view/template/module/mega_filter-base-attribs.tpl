@@ -7,7 +7,7 @@
 
 ?>
 
-<table class="table">
+<table class="table test">
 	<thead>
 		<tr>
 			<td class="left"><?php echo $text_attribute_name; ?></td>
@@ -44,13 +44,13 @@
 				&nbsp;&nbsp;&nbsp;
 				<input id="<?php echo $IDX; ?>_attribs_search_collapsed_c" style="vertical-align: middle; margin-top: 0" type="radio" name="<?php echo $_baseName; ?>[search][collapsed]" value="hide_header" <?php echo ! empty( $_baseValues['search']['collapsed'] ) && $_baseValues['search']['collapsed'] == 'hide_header' ? 'checked="checked"' : ''; ?> />
 				<label for="<?php echo $IDX; ?>_attribs_search_collapsed_c"><?php echo $text_hide_header; ?></label>
-				
+
 				<br />
-				
+
 				<?php echo $text_with_delay_help; ?><input type="text" size="5" name="<?php echo $_baseName; ?>[search][refresh_delay]" value="<?php echo empty( $_baseValues['search']['refresh_delay'] ) ? '1000' : $_baseValues['search']['refresh_delay']; ?>" /> <?php echo $text_milliseconds; ?> ( -1 <?php echo $text_disabled; ?> )<br />
-				
+
 				<br />
-				
+
 				<?php echo $text_show_button_search; ?>: <?php echo mf_render_btn_group( $text_yes, $text_no, $_baseName . '[search][button]', ! empty( $_baseValues['search']['button'] ) ); ?>
 			</td>
 		</tr>
@@ -74,17 +74,18 @@
 				<?php echo $text_collapsed_by_default; ?>: <?php echo mf_render_btn_collapsed( $text_yes, $text_no, $text_pc, $text_mobile, $_baseName . '[price][collapsed]', empty( $_baseValues['price']['collapsed'] ) ? '0' : $_baseValues['price']['collapsed'] ); ?>
 			</td>
 		</tr>
-		<?php 
-		
+		<?php
+
 			$tmp_attribs = array(
 				'manufacturers', 'model', 'sku', 'upc', 'ean', 'jan', 'isbn', 'mpn', 'location', 'length', 'width', 'height',
 			);
-		
+
 		?>
 		<?php foreach( $tmp_attribs as $tmp_attrib ) { ?>
 			<tr>
 				<td>
-					<?php echo ${'attrib_' . $tmp_attrib}; ?>
+
+					<?php echo ${'attrib_' . $tmp_attrib}; //edr?>
 				</td>
 				<td class="center">
 					<?php echo mf_render_btn_group( $text_yes, $text_no, $_baseName . '[' . $tmp_attrib . '][enabled]', ! empty( $_baseValues[$tmp_attrib]['enabled'] ) ); ?>
@@ -100,23 +101,24 @@
 					</select>
 				</td>
 				<td class="center">
-					<?php 
-					
+					<?php
+
 						$tmpTypes = array( 'checkbox', 'radio', 'select' );
-						
+
 						switch( $tmp_attrib ) {
 							case 'manufacturers': {
 								$tmpTypes[] = 'image_list_checkbox';
 								$tmpTypes[] = 'image_list_radio';
 								$tmpTypes[] = 'image';
-								
+
 								break;
 							}
 							case 'length':
 							case 'width':
-							case 'height': {
+							case 'height':
+							case 'mpn': {
 								array_unshift( $tmpTypes, 'slider' );
-								
+
 								break;
 							}
 							case 'sku':
@@ -124,15 +126,15 @@
 							case 'ean':
 							case 'jan':
 							case 'isbn':
-							case 'mpn':
-							case 'location': 
+						//	case 'mpn':
+							case 'location':
 							case 'model' : {
 								array_unshift( $tmpTypes, 'text' );
-								
+
 								break;
 							}
 						}
-					
+
 					?>
 					<select class="form-control" name="<?php echo $_baseName; ?>[<?php echo $tmp_attrib; ?>][display_as_type]">
 						<?php $idxx = 0; foreach( $tmpTypes as $tmpType ) { ?>
@@ -186,6 +188,7 @@
 		</tr>
 		<tr>
 			<td>
+
 				<?php echo $attrib_rating; ?>
 			</td>
 			<td class="center">
